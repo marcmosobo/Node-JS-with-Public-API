@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node.js + PublicAPI Data </title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo">Node.js + PublicAPI Data</div>
+    </header>
+    
+    <div class="wrapper">
+        <div class="news">
+            <% if(entries != null) { %> 
+            <% entries.forEach(function(entry, index) { %> 
+                <a href="<%- entry.url %>" class="news__newsBox" target="_blank">
+                    <h3>
+                        <%- entry.API %>
+                    </h3>
+                    <p>
+                        <%- entry.Description %>                       
+                    </p>
+                    <p>
+                        HTTPS: <%- entry.HTTPS %>
+                    </p>                    
+                    <p>
+                        CORS: <%- entry.Cors %> 
+                    </p>
+                    <p>
+                        Category: <%- entry.Category %>
+                    </p>
+                    <p>
+                        Link: <%- entry.LINK %>
+                    </p>
+                </a>
+            <% }) %> 
+            <% } else { %> 
+                <p>No entries found</p>
+            <% } %> 
+        </div>
+    </div>
+ 
+ 
+</body>
+</html>
