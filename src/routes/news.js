@@ -9,7 +9,7 @@ newsRouter.get('', async(req, res) => {
         console.log(newsAPI.data)  // debugging
  
         // transfer response to the news.ejs
-        res.render('views/news', { entries : newsAPI.data.data });  // first data is reponse next one is the articles in the response (array)
+        res.render('news', { entries : newsAPI.data.entries });  // first data is reponse next one is the articles in the response (array)
     } catch (error) {
         if(error.response) {
             console.log(error.response.data)

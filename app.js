@@ -1,7 +1,7 @@
 
 const express = require('express')
 const app = express()
-const port = 8080
+const port = 2424
  
 app.use(express.static('public'))
 app.use('/css', express.static(__dirname + 'public/css'))

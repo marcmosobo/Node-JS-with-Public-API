@@ -13,13 +13,13 @@
 </head>
 <body>
     <header class="header">
-        <div class="header__logo">Node.js + PublicAPI Data</div>
+        <div class="header__logo">Node.js + Public API Data</div>
     </header>
     
     <div class="wrapper">
         <div class="news">
-            <% if(entries != null) { %> 
-            <% entries.forEach(function(entry, index) { %> 
+            <!-- <% if(entries != null) { %> 
+            <% entries.forEach(function(entry) { %> 
                 <a href="<%- entry.url %>" class="news__newsBox" target="_blank">
                     <h3>
                         <%- entry.API %>
@@ -43,7 +43,31 @@
             <% }) %> 
             <% } else { %> 
                 <p>No entries found</p>
-            <% } %> 
+            <% } %>  -->
+            <table>
+                <tr>
+                    <th>API</th>
+                    <th>Description</th>
+                    <th>HTTPS</th>
+                    <th>Cors</th>
+                    <th>Category</th>
+                    <!-- <th>Link</th>
+                    <th>Auth</th> -->
+                    <th>Modify</th>
+                </tr>                
+                    <% entries.forEach((data) => { %>
+                        <tr>
+                            <td><%= data.API %></td>
+                            <td><%= data.Description %></td>
+                            <td><%= data.HTTPS %></td>
+                            <td><%= data.Cors %></td>
+                            <td><%= data.Category %></td>
+                            <!-- <td><%= data.Link %></td>
+                            <td><%= data.Auth %></td> -->
+                            <td>Edit/Delete</td>
+                        </tr>
+                    <% }); %>
+           </table>            
         </div>
     </div>
  
